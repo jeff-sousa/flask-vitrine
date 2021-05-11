@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Inicial</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <span class="title">Vitrine</span>
+    <form action="/create" method="POST">
+      <input  name="title" placeholder="Produto">
+      <input type="number" required min="0" value="0" step="0.001" name="price" placeholder="Valor R$">
+      <button type="submit">
+        <img src="{{ url_for('static', filename='plus.png') }}">
+      </button>
+    </form>
+  </header>
+
+  <ul class="content">
+    {% for produto in vitrine %}
+      <li class="card">
+        <form action="/update/{{ produto.id }}" method="POST">
+          <input name="title" value="{{ produto.title }}">
+          <input name="price" value="{{ produto.price }}">
+          
+          <button type="submit">✏️</button>
+        </form>
+
+        <div class="actions">
+          <a href="/delete/{{ produto.id }}">❌</a>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

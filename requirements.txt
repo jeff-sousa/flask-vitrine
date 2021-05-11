@@ -1,0 +1,4 @@
+Flask  #requirements.txt são todas as bibliotecas que precisam ser instaladas para o arquivo rodar.
+SQLAlchemy
+Flask-SQLAlchemy
+Werkzeug 

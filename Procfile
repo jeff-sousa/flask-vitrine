@@ -1,0 +1,1 @@
+web: python main.py        #procfile precisa informar o heroku o que ele vai precisar executar, nessa caso é o Main.py
