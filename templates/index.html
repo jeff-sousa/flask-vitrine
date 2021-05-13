@@ -13,7 +13,7 @@
     <span class="title">Vitrine</span>
     <form action="/create" method="POST">
       <input  name="title" placeholder="Produto">
-      <input type="number" required min="0" value="0" step="0.001" name="price" placeholder="Valor R$">
+      <input type="number" required min="0" step="0.001" name="price" placeholder="Valor R$">
       <button type="submit">
         <img src="{{ url_for('static', filename='plus.png') }}">
       </button>
